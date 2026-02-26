@@ -18,3 +18,4 @@ document.getElementById("RegistrarForm").addEventListener("submit", async (e) =>
         alert("Erro ao cadastrar usuario!")
     }
 })
+
