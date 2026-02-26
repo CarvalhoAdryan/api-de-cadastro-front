@@ -43,17 +43,21 @@
     </style>
 </head>
 <body>
-    <div class="Tela Registrar">
-        <h1>Registrar</h1>
-        <input type="text" placeholder="Nome">
+    <div class="TelaRegistrar">
+        <form id="RegistrarForm"><h1>Registrar</h1>
+        <input type="text" placeholder="Nome" id="Nome">
         <br><br>
-        <input type="text" placeholder="Email">
+        <input type="email" placeholder="Email" id="Email">
         <br><br>
-        <input type="password" placeholder="Senha">
+        <input type="password" placeholder="Senha" id="Senha">
         <br><br>
-        <button type="submit">Enviar</button>
+        <button type="submit" id="submit">Enviar</button>
+        </form>
         <br>
         <a href="login.html">Já tem conta?</a>
     </div>
+
+    <script src="https://unpkg.com/axios@1.13.5/dist/axios.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
