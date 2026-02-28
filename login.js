@@ -11,10 +11,12 @@ document.getElementById("LoginForm").addEventListener("submit", async (e) => {
 
     try{
         const response = await api.post("/login", corpo)
-        console.log("Login Realizado com Sucesso! Token: ", response.data)
+        localStorage.setItem("token", response.data.token)
         alert("Usuario encontrado!")
+        window.location.href = "bd.html"
     }catch(error){
         console.log("Erro: ", error)
         alert("Usuario não encontrado!")
     }
 })
+
