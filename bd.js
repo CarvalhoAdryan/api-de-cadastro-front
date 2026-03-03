@@ -23,9 +23,11 @@ async function ListarUsuarios(){
     users.forEach(user => {
         const linha = document.createElement("tr")
         linha.innerHTML = `
-            <th>${user.id}</th>
-            <th>${user.name}</th>
-            <th>${user.email}</th>
+            <td>${user.id}</td>
+            <td>${user.name}</td>
+            <td>${user.email}</td>
+            <td><button class="btn btn-danger btn-sm" onclick="DeleteUser(${user.id})">Apagar</td>
+            <td><button class="btn btn-warning btn-sm">Update</td>
         `
         lista.appendChild(linha)
     });
@@ -35,5 +37,8 @@ async function ListarUsuarios(){
     }
 }
 
+async function DeleteUser(id){
+    const apagar = await api.delete(`/users/${id}`)
+}
 
 ListarUsuarios()
