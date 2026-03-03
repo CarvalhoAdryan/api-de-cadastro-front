@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logado!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Lista de Usuarios</h1>
-    <ul id="ListaUsuarios"></ul>
+    <h2>Lista de Usuarios</h2>
+    <div>
+        <table id="ListaUsuarios"  class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody id="CorpoTabela">
+            </tbody>
+        </table>
+    </div>
 
     <script src="https://unpkg.com/axios@1.13.5/dist/axios.min.js"></script>
     <script src="bd.js"></script>
