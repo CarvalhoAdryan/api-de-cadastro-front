@@ -38,6 +38,8 @@ async function ListarUsuarios(){
 }
 
 async function DeleteUser(id){
+    const confirmar = confirm("Tem certeza que deseja apagar?")
+    if(!confirmar) return
     const apagar = await api.delete(`/users/${id}`)
 }
 
