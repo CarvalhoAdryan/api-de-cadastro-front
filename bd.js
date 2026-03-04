@@ -26,8 +26,8 @@ async function ListarUsuarios(){
             <td>${user.id}</td>
             <td>${user.name}</td>
             <td>${user.email}</td>
-            <td><button class="btn btn-danger btn-sm" onclick="DeleteUser(${user.id})">Apagar</td>
-            <td><button class="btn btn-warning btn-sm">Update</td>
+            <td><button class="btn btn-danger btn-sm" onclick="DeleteUser(${user.id})">Apagar</button>
+            <button class="btn btn-warning btn-sm" onclick="UpdateUser(${user.id},'${user.name}','${user.email}')">Update</button></td>
         `
         lista.appendChild(linha)
     });
@@ -41,6 +41,18 @@ async function DeleteUser(id){
     const confirmar = confirm("Tem certeza que deseja apagar?")
     if(!confirmar) return
     const apagar = await api.delete(`/users/${id}`)
+}
+
+async function UpdateUser(id,nome,email){
+    const NovoNome = prompt("Novo nome: ", nome)
+    const NovoEmail = prompt("Novo email: ", email)
+
+    if(!NovoEmail || !NovoNome) return 
+
+    await api.put(`/users/${id}`,{
+        name : NovoNome, email : NovoEmail
+    }
+    )
 }
 
 ListarUsuarios()
